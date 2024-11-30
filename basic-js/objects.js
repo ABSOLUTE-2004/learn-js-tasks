@@ -72,14 +72,24 @@ alert(sumSalaries());
 // Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
 // P.S. Используйте typeof для проверки, что значение свойства числовое.
 let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu"
-  };
-function multiplyNumeric(obj){
-  for (let key in obj){
-    if (typeof obj[key] == 'number'){
-      obj[key] *=2
+  width: 200,
+  height: 300,
+  title: "My menu",
+};
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == "number") {
+      obj[key] *= 2;
     }
   }
 }
+
+// Задача на взаимодействие:
+//Вытащить значение свойства city из объекта user, назвать переменную как usercity
+// и дополнительно задать ей значение по умолчанию
+const user = {
+  city: "Москва",
+};
+
+const { city: userCity = "не указано" } = user;
+console.log(userCity);
